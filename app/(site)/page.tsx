@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AuthForm from "./components/AuthForm";
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
         >
           Sign in to Jogger account
         </h2>
-        {/* Login Auth will go here */}
+        <AuthForm />
       </div>
     </div>
   );
