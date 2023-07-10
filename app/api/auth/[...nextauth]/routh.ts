@@ -25,11 +25,8 @@ export const authOptions: AuthOptions = {
         password: { label: "password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email) {
-          throw new Error("Email field empty");
-        }
-        if (!credentials?.password) {
-          throw new Error("Password field empty");
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Email or password field empty");
         }
         const user = await prisma.user.findUnique({
           where: {
